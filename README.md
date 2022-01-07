@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/single-price-grid-component-with-sass-flexbox-and-grid-3PA5U9WRp)
+- Live Site URL: [Github Pages](https://ascecent.github.io/fem-single-price-grid-component/)
 
 ## My process
 
