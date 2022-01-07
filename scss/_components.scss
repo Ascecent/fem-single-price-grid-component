@@ -1,0 +1,199 @@
+/*=========================================================
+================     COMPONENTS STYLES    =================
+=========================================================*/
+
+// Buttons
+.signup-button {
+  background-color: $brightYellow;
+  border-radius: pxToRem(6);
+  border: 1px solid $green;
+
+  color: $white;
+  cursor: pointer;
+
+  font-weight: $fontWeightBold;
+
+  letter-spacing: -0.03em;
+  line-height: pxToRem(19);
+
+  padding-inline: pxToRem(20);
+  padding-block: pxToRem(15) pxToRem(14);
+
+  transition: transform 100ms ease-in-out, background-color 300ms ease-in-out;
+
+  width: 100%;
+
+  &:hover {
+    background-color: lighten($color: $brightYellow, $amount: 10);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+%component-box {
+  padding-inline: pxToRem(39);
+}
+
+// Secondary headings
+.secondary-title {
+  font: {
+    size: pxToRem(19);
+    weight: $fontWeightBold;
+  }
+
+  letter-spacing: -0.04em;
+  line-height: pxToRem(22);
+
+  margin-block: 0;
+}
+
+// Component
+.component {
+  border-radius: pxToRem(6);
+  box-shadow: 0 0 pxToRem(75) pxToRem(-10) $grayishBlue;
+
+  color: $grayishBlue;
+
+  margin-inline: pxToRem(32);
+  margin-block: pxToRem(72) pxToRem(76);
+  max-width: pxToRem(311);
+
+  @include media-breakpoint-up(lg) {
+    border-radius: pxToRem(9);
+    max-width: pxToRem(635);
+  }
+
+  &__join {
+    background-color: $white;
+    border-radius: pxToRem(6) pxToRem(6) 0 0;
+
+    @extend %component-box;
+
+    padding-block: pxToRem(28) pxToRem(26);
+
+    @include media-breakpoint-up(lg) {
+      padding-block: pxToRem(40);
+    }
+  }
+
+  &__title {
+    color: $cyan;
+
+    font: {
+      size: clamp($fontSizeMainHeadingSm, 5vw, $fontSizeMainHeadingLg);
+      weight: $fontWeightBold;
+    }
+
+    letter-spacing: -0.01em;
+
+    margin-block: 0 pxToRem(24);
+
+    @include media-breakpoint-up(lg) {
+      margin-block-end: pxToRem(22);
+    }
+  }
+
+  &__guarantee {
+    letter-spacing: -0.045em;
+    line-height: pxToRem(20);
+
+    margin-block: 0 pxToRem(17);
+
+    color: $brightYellow;
+
+    @include media-breakpoint-up(lg) {
+      font-size: pxToRem(18);
+
+      letter-spacing: -0.01em;
+      line-height: pxToRem(26);
+
+      margin-block-end: pxToRem(8);
+    }
+  }
+
+  &__description {
+    font-size: pxToRem(15);
+
+    margin: 0;
+
+    line-height: pxToRem(26);
+    letter-spacing: -0.04em;
+
+    @include media-breakpoint-up(lg) {
+      letter-spacing: 0.02em;
+    }
+  }
+
+  &__subscription {
+    color: $white;
+    border-radius: 0 0 pxToRem(6) pxToRem(6);
+  }
+
+  &__monthly-subscription {
+    background-color: $cyan;
+
+    @extend %component-box;
+    padding-block: pxToRem(28) pxToRem(26);
+
+    @include media-breakpoint-up(lg) {
+      padding-block: pxToRem(40) pxToRem(38);
+      border-radius: 0 0 0 pxToRem(9);
+    }
+
+    .secondary-title {
+      margin-block-end: pxToRem(17);
+    }
+
+    .pricing {
+      margin-block-end: pxToRem(7);
+
+      .bold {
+        font-size: pxToRem(32);
+        line-height: pxToRem(37);
+      }
+
+      .month {
+        color: $lightGray;
+        letter-spacing: -0.01em;
+      }
+    }
+
+    p {
+      letter-spacing: -0.03em;
+      line-height: pxToRem(19);
+
+      margin-block: 0 pxToRem(29);
+    }
+  }
+
+  &__why-us {
+    background-color: $cyanLighter;
+    border-radius: 0 0 pxToRem(6) pxToRem(6);
+
+    @extend %component-box;
+    padding-block: pxToRem(24) pxToRem(22);
+
+    .secondary-title {
+      margin-block-end: pxToRem(19);
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        font-size: pxToRem(14);
+
+        letter-spacing: -0.01em;
+        line-height: pxToRem(16);
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      border-radius: 0 0 pxToRem(9) 0;
+      padding-block: pxToRem(40) pxToRem(38);
+    }
+  }
+}

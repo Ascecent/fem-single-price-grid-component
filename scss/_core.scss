@@ -1,0 +1,140 @@
+@use "sass:math";
+
+/*=========================================================
+================       CORE STYLES        =================
+=========================================================*/
+
+// -------------------------------
+// FUNCTIONS
+// -------------------------------
+
+// Convert px to rem units
+@function pxToRem($unit) {
+  @return math.div($unit, 16) + rem;
+}
+
+// -------------------------------
+
+// -------------------------------
+// VARIABLES
+// -------------------------------
+
+// ------------
+// BREAKPOINTS
+// ------------
+
+$breakpoints: (
+  xsm: 400px,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xlg: 1400px,
+);
+
+// ------------
+
+// ------------
+// COLORS
+// ------------
+
+// Primary
+$cyan: hsl(179, 62%, 43%);
+$cyanLighter: hsl(179, 47%, 52%);
+
+$brightYellow: hsl(71, 73%, 54%);
+
+$green: hsl(139, 39%, 50%);
+$darkGreen: hsl(180, 34%, 48%);
+
+// Neutral
+$lightGray: hsl(204, 43%, 93%);
+$grayishBlue: hsl(218, 22%, 67%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+
+// ------------
+
+// ------------
+// FONTS
+// ------------
+
+// Sizes
+$fontSizeNormal: pxToRem(16);
+
+$fontSizeMainHeadingSm: pxToRem(20);
+$fontSizeMainHeadingLg: pxToRem(24);
+
+// Families
+$fontFamilyKarla: "Karla", sans-serif;
+
+// Weights
+$fontWeightRegular: 400;
+$fontWeightMedium: 500;
+$fontWeightSemiBold: 600;
+$fontWeightBold: 700;
+
+// ------------
+
+// -------------------------------
+
+// -------------------------------
+// MIXINS
+// -------------------------------
+
+// Media breakpoint min-width
+@mixin media-breakpoint-up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// Media breakpoint max-width
+@mixin media-breakpoint-down($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// -------------------------------
+
+// -------------------------------
+// UTILITIES
+// -------------------------------
+
+.bold {
+  font-weight: $fontWeightBold;
+}
+
+// -------------------------------
+
+// -------------------------------
+// GLOBAL STYLES
+// -------------------------------
+
+body {
+  font: {
+    size: $fontSizeNormal;
+    family: $fontFamilyKarla;
+    weight: $fontWeightRegular;
+  }
+
+  background-color: $lightGray;
+}
+
+ul {
+  list-style: none;
+}
+
+// -------------------------------

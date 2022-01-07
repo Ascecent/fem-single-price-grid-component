@@ -1,0 +1,39 @@
+/*=========================================================
+================      LAYOUT STYLES       =================
+=========================================================*/
+
+body {
+  display: flex;
+  justify-content: center;
+
+  @include media-breakpoint-up(lg) {
+    align-items: center;
+    min-height: 100vh;
+  }
+}
+
+// Component
+.component {
+  &__subscription {
+    @include media-breakpoint-up(lg) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__monthly-subscription {
+    .pricing {
+      display: flex;
+      align-items: center;
+      column-gap: pxToRem(11);
+    }
+  }
+
+  &__why-us {
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: pxToRem(4);
+    }
+  }
+}
